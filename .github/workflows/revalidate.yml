@@ -1,0 +1,14 @@
+name: Revalidate on Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  revalidate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call revalidate endpoint
+        run: |
+          curl -X GET "${{ secrets.REVALIDATE_URL }}?secret=${{ secrets.REVALIDATE_SECRET }}"
