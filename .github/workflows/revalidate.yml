@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Call revalidate endpoint
         run: |
-          curl -X GET "${{ secrets.REVALIDATE_URL }}?secret=${{ secrets.REVALIDATE_SECRET }}"
+          curl -X POST "${{ secrets.REVALIDATE_URL }}?secret=${{ secrets.REVALIDATE_SECRET }}"
